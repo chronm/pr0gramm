@@ -3,7 +3,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:pr0gramm/pr0gramm_theme.dart';
 import 'package:pr0gramm/service/collection_service/collection_service.dart';
 import 'package:pr0gramm/service/login_service/login_service.dart';
@@ -18,7 +17,6 @@ import 'service/sync_service/sync_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  HydratedBloc.storage = await HydratedStorage.build();
   await PathProvider.init();
   runApp(ModularApp(module: Pr0grammModule()));
 }

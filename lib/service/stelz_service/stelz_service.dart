@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:pr0gramm_api/pr0gramm_api.dart';
 
@@ -20,7 +20,7 @@ class StelzState {
   StelzState withDisabled() => StelzState(stelz, false);
 }
 
-class StelzService extends HydratedCubit<StelzState> {
+class StelzService extends Cubit<StelzState> {
   StelzService() : super(StelzState.init());
 
   void updateStelz(Map<int, FollowState> stelz) => emit(StelzState(state.stelz..addAll(stelz), true));

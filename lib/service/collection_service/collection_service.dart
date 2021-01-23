@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:pr0gramm_api/pr0gramm_api.dart';
 
@@ -20,7 +20,7 @@ class CollectionState {
   CollectionState withEnabled() => CollectionState(collectedItems, true);
 }
 
-class CollectionService extends HydratedCubit<CollectionState> {
+class CollectionService extends Cubit<CollectionState> {
   CollectionService() : super(CollectionState.init());
 
   void updateCollections(Map<int, ItemInCollection> collectedItems) => emit(CollectionState(state.collectedItems..addAll(collectedItems), true));

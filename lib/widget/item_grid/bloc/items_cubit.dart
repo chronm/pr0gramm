@@ -1,11 +1,10 @@
-import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:pr0gramm_api/pr0gramm_api.dart';
-import 'package:pr0gramm_api/src/pr0gramm_facade.dart';
 
 part 'items_state.dart';
 
-class ItemsCubit extends HydratedCubit<ItemsState> {
+class ItemsCubit extends Cubit<ItemsState> {
   final Pr0gramm _pr0gramm;
 
   ItemsCubit(this._pr0gramm) : super(InitialItemsState()) {

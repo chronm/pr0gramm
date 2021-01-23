@@ -1,15 +1,14 @@
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:pr0gramm/service/sync_service/sync_service.dart';
 import 'package:pr0gramm_api/pr0gramm_api.dart';
 
 part 'login_service.g.dart';
-
 part 'login_service_state.dart';
 
-class LoginService extends HydratedCubit<LoginState> {
+class LoginService extends Cubit<LoginState> {
   final Pr0gramm _pr0gramm;
   final SyncService _syncService;
 

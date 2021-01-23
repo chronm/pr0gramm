@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:pr0gramm/service/collection_service/collection_service.dart';
 import 'package:pr0gramm/service/stelz_service/stelz_service.dart';
@@ -10,10 +10,9 @@ import 'package:pr0gramm/service/vote_service/vote_service.dart';
 import 'package:pr0gramm_api/pr0gramm_api.dart';
 
 part 'sync_service.g.dart';
-
 part 'sync_state.dart';
 
-class SyncService extends HydratedCubit<SyncState> {
+class SyncService extends Cubit<SyncState> {
   final Pr0gramm _pr0gramm;
   final VoteService _voteService;
   final CollectionService _collectionService;

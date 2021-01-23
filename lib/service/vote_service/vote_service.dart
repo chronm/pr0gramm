@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:pr0gramm_api/pr0gramm_api.dart';
 
@@ -22,7 +22,7 @@ class VoteState {
   VoteState withEnabled() => VoteState(items, comments, tags, true);
 }
 
-class VoteService extends HydratedCubit<VoteState> {
+class VoteService extends Cubit<VoteState> {
   VoteService() : super(VoteState.init());
 
   void updateVotes(Map<int, Vote> votedItems, Map<int, Vote> votedComments, Map<int, Vote> votedTags) =>
